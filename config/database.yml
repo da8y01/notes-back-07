@@ -1,0 +1,15 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: db
+  username: postgres
+  password: <%= ENV['PG_PASSWORD'] %>
+  pool: 5
+
+development:
+  <<: *default
+  database: notes-back-07_development
+
+test:
+  <<: *default
+  database: notes-back-07_test
